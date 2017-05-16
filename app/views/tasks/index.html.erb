@@ -1,0 +1,8 @@
+<h1>Welcome on task manager</h1>
+<p>Please see your tasks below</p>
+<ul>
+  <% @tasks.each do |task| %>
+  <% count = 0 %>
+    <p><strong><%= task.id %></strong> - <%= task.name.capitalize %> - <%= link_to "See details", task_path(task) %> - <%= link_to "edit", edit_task_path(task) %> - <%= link_to "destroy", task_path(task), method: :delete %></p>
+  <% end %>
+</ul>
